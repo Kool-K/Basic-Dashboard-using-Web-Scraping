@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>DASHBOARD</title>
+    <style>
+        table,th,td{
+            border:1px solid black;
+
+        }
+    </style>
+</head>
+<body>
+<!-- making django blocks -->
+ {% block body_block %}
+    <table>
+        {% for i in combined_data %}
+        <!-- combined data is all the data listed in viewspy -->
+         <tr>
+            <th>{{i.0}}</th>
+            <td>{{i.1}}</td>
+            <td>{{i.2}}</td>
+
+            <!-- i.0 i.1 and i.2 indicates elements of a tuple, check views.py the elements are listed as {india,1220,323}  something of that sort, i.0 displays the 1st term i.e india and so on-->
+         </tr>
+         {% endfor %}
+    </table>
+    {% endblock %}
+</body>
+
+</html>
